@@ -1,60 +1,78 @@
-PCOS Prediction – Clinical & Ultrasound Modalities
+# 🩺 **PCOS Prediction – Clinical & Ultrasound Modalities**
 
-A dual-modality machine learning system that predicts Polycystic Ovary Syndrome (PCOS) using:
+A dual-modality machine learning system that predicts **Polycystic Ovary Syndrome (PCOS)** using:
 
-Clinical (Hormonal + Symptoms) Data
+- **Clinical (Hormonal + Symptoms) Data**
+- **Ultrasound (Ovarian) Images**
 
-Ultrasound (Ovarian) Images
+This project evaluates how **biochemical indicators** and **ovarian morphological patterns** contribute to PCOS diagnosis using both classical ML and deep learning.
 
-This project compares how biochemical indicators and morphological changes contribute to PCOS diagnosis.
+---
 
-📌 Project Workflow
-1. Clinical Data Pipeline
+## 📌 **Project Workflow**
 
-Preprocessing → Feature Selection → Scaling
+### **1️⃣ Clinical Data Pipeline**
+- Missing value handling, scaling & feature selection  
+- **Models Used:** Logistic Regression, SVM, Random Forest, XGBoost  
+- **Top Performer:** ⭐ **Random Forest (~89% accuracy)**  
+- **Key Insight:** **AMH**, **LH/FSH ratio**, and **Cycle irregularities** are major predictors.
 
-Models: Logistic Regression, SVM, Random Forest, XGBoost
+---
 
-Best Model: Random Forest
+### **2️⃣ Ultrasound Image Pipeline**
+- Image resizing → noise reduction → augmentation  
+- **Models Used:** Custom CNN, VGG16, ResNet50, DenseNet121, MobileNetV2  
+- **Top Performer:** ⭐ **MobileNetV2 (~99% accuracy)**  
+- **Key Insight:** Follicle distribution, ovarian volume & stromal texture help detect PCOS.
 
-Key Insight: Hormonal markers (AMH, LH/FSH) strongly influence prediction.
+---
 
-2. Ultrasound Image Pipeline
+## 🖼 **Important Visuals**
 
-Augmented & preprocessed ultrasound images
+### 📍 **Correlation Heatmap (Clinical Data)**  
+`![Correlation Heatmap](results/correlation_heatmap.png)`
 
-Models: Custom CNN, VGG16, ResNet50, DenseNet121, MobileNetV2
+---
 
-Best Model: Fine-tuned MobileNetV2
+### 📍 **Ultrasound Augmentation Workflow (GIF Animation)**  
+*Shows rotation, shift, zoom, flip, brightness & contrast variations.*
 
-Key Insight: Follicle count & ovarian volume patterns drive detection.
+`![Augmentation GIF](results/ultrasound_augmentation.gif)`
 
-🖼 Important Visuals
-📍 Correlation Heatmap (Clinical Data)
-<img width="1295" height="1188" alt="image" src="https://github.com/user-attachments/assets/2e55e2f9-0a39-4151-ae5d-625bb24b33e9" />
+---
 
+### 📍 **Sample Ultrasound – Normal vs PCOS**  
+Normal Ovary | PCOS Ovary  
+:-------------------------:|:-------------------------:  
+![Normal](results/sample_normal.png) | ![PCOS](results/sample_pcos.png)
 
-📍 Preprocessing of Ultrasound Images
-<img width="1489" height="926" alt="image" src="https://github.com/user-attachments/assets/9b5ffb89-aa43-4de3-8249-e848e2bce83d" />
+---
 
-	
-📍 Training Curves – VGG16
+### 📍 **Training Curves – MobileNetV2**  
+`![Training Curve](results/training_curves.png)`
 
-📈 Results Summary
-Modality	Best Model	Accuracy
-Clinical	Random Forest	~89%
-Ultrasound	MobileNetV2 ~99%
-⚙️ Tech Stack
+---
 
-Python, NumPy, Pandas, Scikit-Learn, TensorFlow/Keras, Matplotlib
+## 📈 **Results Summary**
 
-🚀 Run the Project
+| **Modality**   | **Best Model**     | **Accuracy** |
+|----------------|--------------------|--------------|
+| Clinical       | Random Forest       | **~89%**     |
+| Ultrasound     | MobileNetV2         | **~99%**     |
+
+---
+
+## ⚙️ **Tech Stack**
+- **Python**
+- **NumPy, Pandas**
+- **Scikit-Learn**
+- **TensorFlow / Keras**
+- **Matplotlib**
+
+---
+
+## 🚀 **Run the Project**
+```bash
 git clone https://github.com/maitri169/PCOS-Prediction-System.git
 cd PCOS-Prediction-System
 pip install -r requirements.txt
-
-👩‍💻 Author
-
-Maitri
-B.Tech CSE, IGDTUW
-
