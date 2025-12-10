@@ -40,7 +40,7 @@ This study evaluates two independent pipelines:
 
 ---
 
-### 🌀 **Ultrasound processing and visualization **
+### 🌀 **Ultrasound processing and visualization**
 *Includes rotation, zoom, brightness, cropping, flipping.*
 <img width="1489" height="926" alt="image" src="https://github.com/user-attachments/assets/7cd6318e-88ef-4aa0-9f13-762e7d6804d3" />
 
