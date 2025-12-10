@@ -1,109 +1,60 @@
-# 🩺 PCOS Prediction System
+PCOS Prediction – Clinical & Ultrasound Modalities
 
-A **data-driven machine learning project** that predicts **Polycystic Ovary Syndrome (PCOS)** using clinical and ultrasound records. This project applies feature engineering, data visualization, and model evaluation to identify key health indicators linked to PCOS and support early diagnosis.
+A dual-modality machine learning system that predicts Polycystic Ovary Syndrome (PCOS) using:
 
----
+Clinical (Hormonal + Symptoms) Data
 
-## 📊 Overview
+Ultrasound (Ovarian) Images
 
-This project analyzes a dataset of **1,200+ patient records**, containing clinical, hormonal, and ultrasound parameters.
-Through **data preprocessing, correlation analysis, and statistical modeling**, the system achieved up to **91% accuracy** in predicting PCOS occurrence.
+This project compares how biochemical indicators and morphological changes contribute to PCOS diagnosis.
 
----
+📌 Project Workflow
+1. Clinical Data Pipeline
 
-## 🧠 Key Highlights
+Preprocessing → Feature Selection → Scaling
 
-* Cleaned and processed structured healthcare data.
-* Identified major influencing parameters using correlation and visualization techniques.
-* Trained and evaluated multiple machine learning models to ensure robust predictions.
-* Highlighted feature importance and health insights through graphical analysis.
+Models: Logistic Regression, SVM, Random Forest, XGBoost
 
----
+Best Model: Random Forest
 
-## 🧰 Tech Stack
+Key Insight: Hormonal markers (AMH, LH/FSH) strongly influence prediction.
 
-**Languages:** Python
-**Libraries:** Pandas, NumPy, Scikit-learn, Seaborn, Matplotlib
-**Environment:** Jupyter Notebook
+2. Ultrasound Image Pipeline
 
----
+Augmented & preprocessed ultrasound images
 
-## 📂 Project Structure
+Models: Custom CNN, VGG16, ResNet50, DenseNet121, MobileNetV2
 
-```
-PCOS-Prediction-System/
-│
-├── dataset/
-│   └── PCOS_data.csv                
-│
-├── notebooks/
-│   └── PCOS_Prediction_Analysis.ipynb  
-│
-├── results/
-│   ├── confusion_matrix.png
-│   ├── correlation_heatmap.png
-│
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
+Best Model: Fine-tuned MobileNetV2
 
----
+Key Insight: Follicle count & ovarian volume patterns drive detection.
 
-## 🚀 How to Run
+🖼 Important Visuals
+📍 Correlation Heatmap (Clinical Data)
+<img width="1295" height="1188" alt="image" src="https://github.com/user-attachments/assets/2e55e2f9-0a39-4151-ae5d-625bb24b33e9" />
 
-1. Clone the repository
 
-   ```bash
-   git clone https://github.com/maitri169/PCOS-Prediction-System.git
-   cd PCOS-Prediction-System
-   ```
-2. Install dependencies
+📍 Preprocessing of Ultrasound Images
+<img width="1489" height="926" alt="image" src="https://github.com/user-attachments/assets/9b5ffb89-aa43-4de3-8249-e848e2bce83d" />
 
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Open the notebook
+	
+📍 Training Curves – VGG16
 
-   ```bash
-   jupyter notebook notebooks/PCOS_Prediction_Analysis.ipynb
-   ```
+📈 Results Summary
+Modality	Best Model	Accuracy
+Clinical	Random Forest	~89%
+Ultrasound	MobileNetV2 ~99%
+⚙️ Tech Stack
 
----
+Python, NumPy, Pandas, Scikit-Learn, TensorFlow/Keras, Matplotlib
 
-## 📈 Results
+🚀 Run the Project
+git clone https://github.com/maitri169/PCOS-Prediction-System.git
+cd PCOS-Prediction-System
+pip install -r requirements.txt
 
-| Metric    | Best Performance |
-| --------- | ---------------- |
-| Accuracy  | **91.41%**       |
-| Precision | 91%              |
-| Recall    | 89%              |
-| F1-Score  | 90%              |
+👩‍💻 Author
 
-> **Gradient Boosting** achieved the best overall performance on the dataset.
-
----
-
-## 🔍 Insights
-
-* Ultrasound-related parameters and hormone levels were found to be major predictors.
-* The project highlights the importance of data-driven insights in women’s health research.
-
----
-
-## 🧩 Future Scope
-
-* Integrate ultrasound image-based classification using Deep Learning (CNN).
-* Deploy as a web app for clinical usage via Flask or Streamlit.
-* Add explainability using SHAP or LIME for feature interpretation.
-
----
-
-## 💡 Author
-
-**Maitri**
-📍 B.Tech CSE, IGDTUW
-🔗 [LinkedIn](https://www.linkedin.com/in/maitri-60b43225a/) | [GitHub](https://github.com/maitri169)
-
----
+Maitri
+B.Tech CSE, IGDTUW
 
